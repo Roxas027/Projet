@@ -1,0 +1,23 @@
+{# templates/Article/index.html.twig #} {% extends 'base.html.twig' %}
+{% block title %}<title>Inscription</title>{% endblock %} 
+
+ {% block body %}
+ {{parent()}}
+<div class="container">
+<div class="row">
+<div class="col-md-10 ml-md-auto">
+<div class="card bg-light mb-3 mt-5" style="width: 800px">
+<div class="card-body">
+{% if app.user %}
+<div class="card-header mb-3">Article Form</div>
+{{form(form)}}
+{% endif %}
+{% if not app.user %}
+Vous n'êtes pas identifié
+{% endif %}
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
