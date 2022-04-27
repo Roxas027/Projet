@@ -54,13 +54,19 @@ public function show(): Response
 {
     // Récupération de l'utilisateur connecté
     $user = $this->getUser();
-
+    if($user!=NULL){
     // Récupération des articles de l'utilisateur connecté
     $articles = $user->getArticles();
 
     return $this->render('article/show.html.twig', [
         'articles' => $articles,
     ]);
+}
+else{
+    return $this->render('article/show.html.twig', [
+        'articles' => "Non",
+    ]);
+}
 }
 
 }
